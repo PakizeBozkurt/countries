@@ -1,36 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import CountryInfo from './CountryInfo';
-
-
-
+import React, { useEffect, useState } from "react";
+import CountryInfo from "./CountryInfo";
 
 function CardCountry() {
+  const [country, setCountry] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState([country]);
 
-const [country, setCountry] = useState([]);
-const [search, setSearch] = useState("");
-const [filtered, setFiltered] = useState([country]);
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+    setFiltered(
+      country.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  };
 
-const handleChange = (event) => {
-  setSearch(event.target.value);
-  setFiltered(
-  country.filter((item) => 
-  item.name.toLowerCase().includes(search.toLowerCase()) 
-  ))
-}
-
-useEffect(() => {
+  useEffect(() => {
     fetch("https://restcountries.com/v2/all")
-    .then(res => res.json())
-    .then(data => setCountry(data))
-}, [])
-console.log(country);
+      .then((res) => res.json())
+      .then((data) => setCountry(data));
+  }, []);
+  console.log(country);
 
   return (
     <div>
       <h2>Countries</h2>
-      <input type="text" placeholder='Search...' onChange={handleChange}/>
+      <input type="text" placeholder="Search..." onChange={handleChange} />
       <div className="container">
-        <div className='row'>
+        <div className="row">
           {filtered.map((element) => {
             return <CountryInfo name={element} />;
           })}

@@ -1,11 +1,10 @@
-import './App.css';
-import CardCountry from './CardCountry';
+import "./App.css";
+import CardCountry from "./CardCountry";
 
-//"https://restcountries.com/v2/all"
 function App() {
   return (
     <div>
-    <CardCountry />
+      <CardCountry />
     </div>
   );
 }
