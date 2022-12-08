@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CountryInfo from "./CountryInfo";
-import  "/home/codeyourfuture/Documents/React/W-2/Challenges/Countries/countries/src/country.css";
+import "/home/codeyourfuture/Documents/React/W-2/Challenges/Countries/countries/src/components/country.css";
 
 function CardCountry() {
   const [country, setCountry] = useState([]);

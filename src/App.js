@@ -1,5 +1,5 @@
 import "./App.css";
-import CardCountry from "./CardCountry";
+import CardCountry from "./components/CardCountry";
 
 function App() {
   return (
