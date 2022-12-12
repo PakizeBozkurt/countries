@@ -5,11 +5,27 @@ function CountryInfo(props) {
   return (
     <div>
       <Card className="card">
-        <Card.Img variant="top" src={props.name.flag} />
+        <Card.Img variant="top" src={props.data.flag} />
         <Card.Body>
-          <Card.Title>{props.name.name}</Card.Title>
+          <Card.Title>{props.data.name}</Card.Title>
           <Card.Text>{props.name.capital}</Card.Text>
-          <Button variant="primary">Clik Me!</Button>
+          <ul className="card__list">
+            <li>
+              <span>Population: </span>
+              {props.data.population}
+            </li>
+            <li>
+              <span>Region: </span>
+              {props.data.region}
+            </li>
+            <li>
+              <span>Capital: </span>
+              {props.data.capital}
+            </li>
+          </ul>
+          <Button variant="primary" onClick={props.handleShow}>
+            Clik Me!
+          </Button>
         </Card.Body>
       </Card>
     </div>

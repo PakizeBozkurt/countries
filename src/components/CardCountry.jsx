@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import CountryInfo from "./CountryInfo";
 import "/home/codeyourfuture/Documents/React/W-2/Challenges/Countries/countries/src/components/country.css";
 
+
+
 function CardCountry() {
   const [country, setCountry] = useState([]);
   const [search, setSearch] = useState("");
@@ -30,7 +32,8 @@ function CardCountry() {
       <div className="container">
         <div className="row">
           {filtered.map((element) => {
-            return <CountryInfo name={element} />;
+            return <CountryInfo data={element}/>
+            ;
           })}
         </div>
       </div>
