@@ -3,7 +3,7 @@ import React from "react";
 function Select() {
   return (
     <div>
-      <h1>Which one yours?</h1>
+      <h1>Whould you like to select one?</h1>
     </div>
   );
 }
